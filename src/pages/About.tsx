@@ -92,9 +92,7 @@ const About = () => {
 
               <Card className="bg-gradient-card border-border">
                 <CardContent className="pt-6">
-                  <p className="text-muted-foreground font-semibold text-center">
-                    At the end of the day, it's your business — we're here to guide, support, and empower you to achieve your goals.
-                  </p>
+                  <p className="text-muted-foreground font-semibold text-center">At the end of the day, it's your business we're here to guide, support, and empower you to achieve your goals.</p>
                 </CardContent>
               </Card>
             </div>
