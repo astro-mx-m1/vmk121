@@ -50,7 +50,7 @@ const Navbar = () => {
       {/* Top Row - Logo & User Login */}
       <div className="bg-background border-b">
         <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-end">
+          <div className="flex items-center justify-between">
             {/* Logo on the right side */}
             <div className="flex items-center gap-8">
               <div className="hidden lg:flex items-center gap-4">
@@ -62,7 +62,7 @@ const Navbar = () => {
                 </Button>
               </div>
 
-              <Link to="/" className="flex items-center" style={{ marginRight: '5ch' }}>
+              <Link to="/" className="flex items-center" style={{ marginLeft: '5ch' }}>
                 <img 
                   src={logoMain} 
                   alt="VMK Accountants Limited - Business Advisors & Tax Consultant | Licensed & Regulated" 
@@ -286,7 +286,7 @@ const Navbar = () => {
             </div>
 
             {/* Phone Number */}
-            <div className="hidden lg:flex items-center bg-primary text-white px-8 py-5">
+            <div className="hidden lg:flex items-center bg-primary text-primary-foreground px-8 py-5">
               <Phone className="h-5 w-5 mr-3" />
               <span className="text-xl font-bold tracking-wide">07956309363</span>
             </div>
