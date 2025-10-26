@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, Phone, MessageCircle } from "lucide-react";
+import { Menu, X, Home, Phone } from "lucide-react";
 import logoMain from "@/assets/logo-main-new.png";
 import {
   NavigationMenu,
@@ -47,16 +47,16 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-background shadow-lg">
-      {/* Top Row - Logo, User Login, Chat */}
+      {/* Top Row - Logo & User Login */}
       <div className="bg-background border-b">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Left spacer for balance */}
             <div className="w-48 hidden lg:block"></div>
 
-            {/* Right Side - Logo, User Login & Chat */}
+            {/* Right Side - Logo & User Login */}
             <div className="flex items-center gap-8 ml-auto">
-              <Link to="/" className="flex items-center mr-8">
+              <Link to="/" className="flex items-center" style={{ marginRight: '5ch' }}>
                 <img 
                   src={logoMain} 
                   alt="VMK Accountants Limited - Business Advisors & Tax Consultant | Licensed & Regulated" 
@@ -65,7 +65,6 @@ const Navbar = () => {
                     height: 'auto',
                     maxHeight: '80px',
                     transform: 'scale(1.5)',
-                    marginRight: '2rem'
                   }}
                 />
               </Link>
@@ -77,14 +76,6 @@ const Navbar = () => {
                 >
                   USER LOGIN
                 </Button>
-                <div className="relative">
-                  <div className="bg-primary rounded-full p-4 cursor-pointer hover:opacity-90 transition-opacity">
-                    <MessageCircle className="h-6 w-6 text-white" />
-                  </div>
-                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">
-                    1
-                  </span>
-                </div>
               </div>
             </div>
 
