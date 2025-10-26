@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
-import accountingBookkeeping from "@/assets/slideshow/accounting-bookkeeping.jpg";
+import makeMoreMoney from "@/assets/slideshow/make-more-money.png";
 import businessNews from "@/assets/slideshow/business-news.jpg";
 import financialConsultation from "@/assets/slideshow/financial-consultation.jpg";
-import taxCalculation from "@/assets/slideshow/tax-calculation.jpg";
-import accountingDocuments from "@/assets/slideshow/accounting-documents.jpg";
+import teamQualified from "@/assets/slideshow/team-qualified.png";
+import payLessTax from "@/assets/slideshow/pay-less-tax.png";
 import businessAnalytics from "@/assets/slideshow/business-analytics.jpg";
+import discoverTaxSavings from "@/assets/slideshow/discover-tax-savings.png";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
-  { image: accountingBookkeeping, alt: "Professional Accounting and Bookkeeping Services" },
+  { image: makeMoreMoney, alt: "Make More Money With Our Expert Advice" },
   { image: businessNews, alt: "Stay Updated with Business and Financial News" },
   { image: financialConsultation, alt: "Expert Financial Consultation and Planning" },
-  { image: taxCalculation, alt: "Precise Tax Calculation and Advisory" },
-  { image: accountingDocuments, alt: "Comprehensive Financial Documentation Services" },
+  { image: teamQualified, alt: "Team of Qualified Experienced Accountants" },
+  { image: payLessTax, alt: "Pay Less Tax With Expert Advice" },
   { image: businessAnalytics, alt: "Business Analytics and Financial Insights" },
+  { image: discoverTaxSavings, alt: "Discover How You Can Pay Less Tax" },
 ];
 
 const HeroSlideshow = () => {
