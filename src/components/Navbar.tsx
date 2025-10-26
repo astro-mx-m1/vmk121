@@ -51,29 +51,28 @@ const Navbar = () => {
       <div className="bg-background border-b">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            {/* Logo on the right side */}
-            <div className="flex items-center gap-8">
-              <div className="hidden lg:flex items-center gap-4">
-                <Button 
-                  variant="secondary"
-                  className="uppercase tracking-wide"
-                >
-                  USER LOGIN
-                </Button>
-              </div>
+            {/* Logo on the left side */}
+            <Link to="/" className="flex items-center" style={{ marginLeft: '5ch' }}>
+              <img 
+                src={logoMain} 
+                alt="VMK Accountants Limited - Business Advisors & Tax Consultant | Licensed & Regulated" 
+                style={{
+                  width: '250px',
+                  height: 'auto',
+                  maxHeight: '80px',
+                  transform: 'scale(1.5)',
+                }}
+              />
+            </Link>
 
-              <Link to="/" className="flex items-center" style={{ marginLeft: '5ch' }}>
-                <img 
-                  src={logoMain} 
-                  alt="VMK Accountants Limited - Business Advisors & Tax Consultant | Licensed & Regulated" 
-                  style={{
-                    width: '250px',
-                    height: 'auto',
-                    maxHeight: '80px',
-                    transform: 'scale(1.5)',
-                  }}
-                />
-              </Link>
+            {/* User Login on the right */}
+            <div className="hidden lg:flex items-center gap-4">
+              <Button 
+                variant="secondary"
+                className="uppercase tracking-wide"
+              >
+                USER LOGIN
+              </Button>
             </div>
 
             {/* Mobile Menu Button */}
