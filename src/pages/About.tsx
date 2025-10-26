@@ -3,18 +3,9 @@ import { CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import CTASection from "@/components/CTASection";
 import aboutTeamImage from "@/assets/about-team.jpg";
-
 const About = () => {
-  const whyChooseUs = [
-    "Tailored services: Every client's needs are unique — we adapt our services to suit you.",
-    "Fixed fees: No hidden costs, no surprises.",
-    "Plain language: We explain everything clearly, without jargon.",
-    "Smart solutions: We think creatively to maximise your tax efficiency.",
-    "Full support: From start-up to growth to success — we're with you every step of the way.",
-  ];
-
-  return (
-    <div>
+  const whyChooseUs = ["Tailored services: Every client's needs are unique — we adapt our services to suit you.", "Fixed fees: No hidden costs, no surprises.", "Plain language: We explain everything clearly, without jargon.", "Smart solutions: We think creatively to maximise your tax efficiency.", "Full support: From start-up to growth to success — we're with you every step of the way."];
+  return <div>
       <Helmet>
         <title>About VMK Accountants | Chartered Accountants Since 2001</title>
         <meta name="description" content="VMK Accountants Ltd - trusted Chartered Accountants serving London businesses since 2001. Expert accounting, tax planning, and business advisory services with transparent fixed fees." />
@@ -24,17 +15,15 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={aboutTeamImage} 
-            alt="VMK Accountants Team" 
-            className="w-full h-full object-cover"
-          />
+          <img src={aboutTeamImage} alt="VMK Accountants Team" className="w-full h-full object-cover" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4 animate-fade-in-up">
             About Us
           </h1>
-          <p className="text-xl text-primary-foreground/90 max-w-3xl animate-fade-in-up leading-relaxed" style={{ animationDelay: "0.1s" }}>
+          <p className="text-xl text-primary-foreground/90 max-w-3xl animate-fade-in-up leading-relaxed" style={{
+          animationDelay: "0.1s"
+        }}>
             Trusted Chartered Accountants serving businesses across London since 2001
           </p>
         </div>
@@ -48,9 +37,7 @@ const About = () => {
               <p>
                 Established in 2001, VMK Accountants Ltd is a trusted and independent firm of Chartered Accountants based in Kenton, Harrow, Pinner, Kingsbury, Edgware, Watford, Wembley, Northwood, Uxbridge, and across London.
               </p>
-              <p>
-                We provide accounting, tax, and advisory services tailored for owner-managed businesses, sole traders, partnerships, and small limited companies — often family-run enterprises. Our mission is simple: to deliver professional, reliable, and affordable accounting solutions that give you peace of mind.
-              </p>
+              <p>We provide accounting, tax, and advisory services tailored for owner-managed businesses, sole traders, partnerships, and small limited companies; often family-run enterprises. Our mission is simple: to deliver professional, reliable, and affordable accounting solutions that give you peace of mind.</p>
               <p>
                 At VMK Accountants, we believe in clear communication, practical advice, and fixed, transparent fees. Whether you're a start-up, an established business, or a self-employed professional, we'll help you stay compliant, organised, and profitable.
               </p>
@@ -67,12 +54,10 @@ const About = () => {
               Why Choose VMK Accountants?
             </h2>
             <div className="space-y-4 mb-8">
-              {whyChooseUs.map((item, index) => (
-                <div key={index} className="flex items-start gap-3 bg-card p-4 rounded-lg shadow-soft">
+              {whyChooseUs.map((item, index) => <div key={index} className="flex items-start gap-3 bg-card p-4 rounded-lg shadow-soft">
                   <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-1" />
                   <p className="text-muted-foreground">{item}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
             <p className="text-lg text-muted-foreground text-center">
               We aim to maximise your profits and minimise your stress, taking care of your accounting and paperwork so you can focus on running your business.
@@ -163,16 +148,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <CTASection
-        title="Get in Touch"
-        description="For a friendly, no-obligation chat about your accounting or tax needs, contact Vipul or a member of our team today. Let's discuss how we can support your business and help you reach your financial goals."
-        primaryButtonText="Contact Us"
-        primaryButtonLink="/contact"
-        secondaryButtonText="View Our Services"
-        secondaryButtonLink="/services"
-      />
-    </div>
-  );
+      <CTASection title="Get in Touch" description="For a friendly, no-obligation chat about your accounting or tax needs, contact Vipul or a member of our team today. Let's discuss how we can support your business and help you reach your financial goals." primaryButtonText="Contact Us" primaryButtonLink="/contact" secondaryButtonText="View Our Services" secondaryButtonLink="/services" />
+    </div>;
 };
-
 export default About;
