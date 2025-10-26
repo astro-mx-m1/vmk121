@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Home, Phone } from "lucide-react";
-import logoMain from "@/assets/logo-main-new.png";
+import logoMain from "@/assets/logo-updated.png";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -50,12 +50,18 @@ const Navbar = () => {
       {/* Top Row - Logo & User Login */}
       <div className="bg-background border-b">
         <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            {/* Left spacer for balance */}
-            <div className="w-48 hidden lg:block"></div>
+          <div className="flex items-center justify-end">
+            {/* Logo on the right side */}
+            <div className="flex items-center gap-8">
+              <div className="hidden lg:flex items-center gap-4">
+                <Button 
+                  variant="secondary"
+                  className="uppercase tracking-wide"
+                >
+                  USER LOGIN
+                </Button>
+              </div>
 
-            {/* Right Side - Logo & User Login */}
-            <div className="flex items-center gap-8 ml-auto">
               <Link to="/" className="flex items-center" style={{ marginRight: '5ch' }}>
                 <img 
                   src={logoMain} 
@@ -68,15 +74,6 @@ const Navbar = () => {
                   }}
                 />
               </Link>
-
-              <div className="hidden lg:flex items-center gap-4">
-                <Button 
-                  variant="secondary"
-                  className="uppercase tracking-wide"
-                >
-                  USER LOGIN
-                </Button>
-              </div>
             </div>
 
             {/* Mobile Menu Button */}

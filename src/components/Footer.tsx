@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
-import headerLogo from "@/assets/logo-main-new.png";
+import headerLogo from "@/assets/logo-updated.png";
 import accaLogo from "@/assets/acca-logo.png";
 import aatLogo from "@/assets/aat-logo.png";
 import SoftwareCarousel from "./SoftwareCarousel";
