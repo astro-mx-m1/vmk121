@@ -1,15 +1,19 @@
 import { useState, useEffect } from "react";
-import slide1 from "@/assets/slideshow/slide1.jpg";
-import slide2 from "@/assets/slideshow/slide2.jpg";
-import slide3 from "@/assets/slideshow/slide3.jpg";
-import slide4 from "@/assets/slideshow/slide4.jpeg";
+import accountingBookkeeping from "@/assets/slideshow/accounting-bookkeeping.jpg";
+import businessNews from "@/assets/slideshow/business-news.jpg";
+import financialConsultation from "@/assets/slideshow/financial-consultation.jpg";
+import taxCalculation from "@/assets/slideshow/tax-calculation.jpg";
+import accountingDocuments from "@/assets/slideshow/accounting-documents.jpg";
+import businessAnalytics from "@/assets/slideshow/business-analytics.jpg";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
-  { image: slide1, alt: "Make More Money - With Our expert advice" },
-  { image: slide2, alt: "Team of Qualified - experienced accountants" },
-  { image: slide3, alt: "Discover How You - Can pay less tax" },
-  { image: slide4, alt: "Pay Less Tax - With Expert Advice" },
+  { image: accountingBookkeeping, alt: "Professional Accounting and Bookkeeping Services" },
+  { image: businessNews, alt: "Stay Updated with Business and Financial News" },
+  { image: financialConsultation, alt: "Expert Financial Consultation and Planning" },
+  { image: taxCalculation, alt: "Precise Tax Calculation and Advisory" },
+  { image: accountingDocuments, alt: "Comprehensive Financial Documentation Services" },
+  { image: businessAnalytics, alt: "Business Analytics and Financial Insights" },
 ];
 
 const HeroSlideshow = () => {
