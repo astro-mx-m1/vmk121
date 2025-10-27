@@ -59,9 +59,7 @@ const About = () => {
                   <p className="text-muted-foreground">{item}</p>
                 </div>)}
             </div>
-            <p className="text-lg text-muted-foreground text-center">
-              We aim to maximise your profits and minimise your stress, taking care of your accounting and paperwork so you can focus on running your business.
-            </p>
+            <p className="text-lg text-muted-foreground text-center">We aim to maximise your profits and minimise your stress, taking care of your accounting and paperwork so you can focus on running your business.</p>
           </div>
         </div>
       </section>
@@ -109,9 +107,7 @@ const About = () => {
             </h2>
             <div className="bg-card p-8 rounded-lg shadow-medium">
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
-                <p>
-                  Vipul Katkoria, founder of VMK Accountants, has been a practising accountant for over 18 years and is a full member of both ACCA and AAT.
-                </p>
+                <p>Vipul Katkoria, founder of VMK Accountants, has been a practising accountant for over 25 years and is a full member of both ACCA and AAT.</p>
                 <p>
                   Vipul's diverse experience spans IT contractors, medical professionals, retail, restaurants, and construction businesses. His hands-on approach and real-world understanding help clients make informed decisions — not just about numbers, but about their overall business strategy.
                 </p>
