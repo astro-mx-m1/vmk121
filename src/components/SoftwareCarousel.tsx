@@ -37,7 +37,7 @@ const SoftwareCarousel = () => {
                 <img
                   src={software.logo}
                   alt={software.name}
-                  className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-12 w-auto object-contain transition-all duration-300"
                 />
               </a>
             ))}

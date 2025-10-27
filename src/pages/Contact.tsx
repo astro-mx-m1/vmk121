@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, ArrowRight, FileCheck, Building2 } from "lucide-react";
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
   email: z.string().email("Invalid email address").max(255, "Email must be less than 255 characters"),
@@ -69,17 +69,38 @@ const Contact = () => {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    toast({
-      title: "Message sent successfully!",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours."
-    });
-    form.reset();
-    
-    // Generate new captcha
-    const newAnswer = generateCaptcha();
-    setCaptchaAnswer(newAnswer);
+    try {
+      // Send email to vipul@vmkaccountants.co.uk
+      const emailSubject = encodeURIComponent(`Contact Form: ${data.subject}`);
+      const emailBody = encodeURIComponent(
+        `Name: ${data.name}\n` +
+        `Email: ${data.email}\n` +
+        `Phone: ${data.phone || 'Not provided'}\n` +
+        `Location: ${data.location}\n` +
+        `Subject: ${data.subject}\n\n` +
+        `Message:\n${data.message}`
+      );
+      
+      // Open default email client
+      window.location.href = `mailto:vipul@vmkaccountants.co.uk?subject=${emailSubject}&body=${emailBody}`;
+      
+      toast({
+        title: "Opening email client...",
+        description: "Your default email application will open with the message ready to send."
+      });
+      
+      form.reset();
+      
+      // Generate new captcha
+      const newAnswer = generateCaptcha();
+      setCaptchaAnswer(newAnswer);
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem preparing your message. Please try emailing us directly.",
+        variant: "destructive"
+      });
+    }
     
     setIsSubmitting(false);
   };
@@ -117,7 +138,7 @@ const Contact = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">07956309363</p>
+                  <a href="tel:07956309363" className="text-muted-foreground hover:text-accent transition-colors">07956309363</a>
                   <p className="text-sm text-muted-foreground mt-2">Monday - Friday: 9:30am - 7:30pm</p>
                 </CardContent>
               </Card>
@@ -130,8 +151,8 @@ const Contact = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground break-words">vipul@vmkaccountants.co.uk
-admin@vmkaccountants.oc.uk</p>
+                  <a href="mailto:vipul@vmkaccountants.co.uk" className="text-muted-foreground hover:text-accent transition-colors block break-words">vipul@vmkaccountants.co.uk</a>
+                  <a href="mailto:admin@vmkaccountants.co.uk" className="text-muted-foreground hover:text-accent transition-colors block break-words">admin@vmkaccountants.co.uk</a>
                   <p className="text-sm text-muted-foreground mt-2">We respond within 24 hours</p>
                 </CardContent>
               </Card>
@@ -144,7 +165,14 @@ admin@vmkaccountants.oc.uk</p>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">17 Hunters Grove, Kenton, Harrow, Middlesex, HA3 9AB </p>
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=17+Hunters+Grove,+Kenton,+Harrow,+HA3+9AB" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-accent transition-colors block"
+                  >
+                    17 Hunters Grove, Kenton, Harrow, Middlesex, HA3 9AB
+                  </a>
                   <p className="text-sm text-muted-foreground mt-2">Serving all of London</p>
                 </CardContent>
               </Card>
@@ -338,6 +366,60 @@ admin@vmkaccountants.oc.uk</p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* New Client Setup Questionnaire Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center glass-card p-12 rounded-3xl">
+            <div className="mb-8">
+              <FileCheck className="h-16 w-16 text-accent mx-auto mb-4" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-8">
+              Become a VMK Client Today
+            </h2>
+            <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
+              Ready to work with us? Complete our simple client setup questionnaire to get started. We'll review your information and get in touch to discuss how we can help your business thrive.
+            </p>
+            <a 
+              href="https://forms.gle/3gkSAWFpFumoJsZHA" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" variant="default" className="group text-base px-10 shadow-lg">
+                Complete New Client Setup Questionnaire
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* New Company Setup Form Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center glass-card p-12 rounded-3xl border-2 border-primary/20">
+            <div className="mb-8">
+              <Building2 className="h-16 w-16 text-primary mx-auto mb-4" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-8">
+              Starting a New Company?
+            </h2>
+            <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
+              Complete our simple online form to begin your company formation process. We'll guide you through every step.
+            </p>
+            <a 
+              href="https://forms.gle/Xhe3Vctq3ty7YU8MA" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" variant="default" className="group text-base px-10 shadow-lg">
+                Complete New Company Setup Form
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+              </Button>
+            </a>
           </div>
         </div>
       </section>
