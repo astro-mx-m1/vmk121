@@ -107,10 +107,8 @@ const About = () => {
             </h2>
             <div className="bg-card p-8 rounded-lg shadow-medium">
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
-                <p>Vipul Katkoria, founder of VMK Accountants, has been a practising accountant for over 25 years and is a full member of both ACCA and AAT.</p>
-                <p>
-                  Vipul's diverse experience spans IT contractors, medical professionals, retail, restaurants, and construction businesses. His hands-on approach and real-world understanding help clients make informed decisions — not just about numbers, but about their overall business strategy.
-                </p>
+                <p>Vipul Katkoria, founder of VMK Accountants, has been a practising accountant for over 25+ years and is a full member of both ACCA and AAT.</p>
+                <p>Vipul's diverse experience spans IT contractors, medical professionals, retail, restaurants, and construction businesses. His hands-on approach and real-world understanding help clients make informed decisions; not just about numbers, but about their overall business strategy.</p>
                 <p>
                   Believing that entrepreneurs don't work "office hours," Vipul ensures his clients have access to expert advice when they need it most.
                 </p>
