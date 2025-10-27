@@ -11,22 +11,20 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
   email: z.string().email("Invalid email address").max(255, "Email must be less than 255 characters"),
   phone: z.string().min(10, "Phone number must be at least 10 characters").max(20, "Phone number must be less than 20 characters").optional().or(z.literal("")),
   location: z.string().min(1, "Please select your location"),
   subject: z.string().min(5, "Subject must be at least 5 characters").max(200, "Subject must be less than 200 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters").max(2000, "Message must be less than 2000 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters").max(2000, "Message must be less than 2000 characters")
 });
-
 type FormValues = z.infer<typeof formSchema>;
-
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,46 +33,23 @@ const Contact = () => {
       phone: "",
       location: "",
       subject: "",
-      message: "",
-    },
+      message: ""
+    }
   });
-
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-    
+
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
+    await new Promise(resolve => setTimeout(resolve, 1000));
     toast({
       title: "Message sent successfully!",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      description: "Thank you for contacting us. We'll get back to you within 24 hours."
     });
-
     form.reset();
     setIsSubmitting(false);
   };
-
-  const locations = [
-    "Kenton",
-    "Harrow",
-    "Kingsbury",
-    "Stanmore",
-    "Wembley",
-    "Finchley",
-    "Northwood",
-    "Edgware",
-    "Southall",
-    "Hayes",
-    "Wood Green",
-    "Watford",
-    "Hendon",
-    "Northolt",
-    "London",
-    "Other",
-  ];
-
-  return (
-    <div>
+  const locations = ["Kenton", "Harrow", "Kingsbury", "Stanmore", "Wembley", "Finchley", "Northwood", "Edgware", "Southall", "Hayes", "Wood Green", "Watford", "Hendon", "Northolt", "London", "Other"];
+  return <div>
       <Helmet>
         <title>Contact VMK Accountants | North West London Tax Advisors</title>
         <meta name="description" content="Contact VMK Accountants for expert accounting, tax, and business advisory services in North West London. Call 07956309363 or email us for a free consultation." />
@@ -108,7 +83,7 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">07956309363</p>
-                  <p className="text-sm text-muted-foreground mt-2">Monday - Friday: 9am - 5pm</p>
+                  <p className="text-sm text-muted-foreground mt-2">Monday - Friday: 9:30am - 7:30pm</p>
                 </CardContent>
               </Card>
 
@@ -120,7 +95,8 @@ const Contact = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground break-words">vipul@vmkaccountants.co.uk</p>
+                  <p className="text-muted-foreground break-words">vipul@vmkaccountants.co.uk
+admin@vmkaccountants.oc.uk</p>
                   <p className="text-sm text-muted-foreground mt-2">We respond within 24 hours</p>
                 </CardContent>
               </Card>
@@ -133,8 +109,8 @@ const Contact = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">Harrow, NW London</p>
-                  <p className="text-sm text-muted-foreground mt-2">Serving all of North West London</p>
+                  <p className="text-muted-foreground">17 Hunters Grove, Kenton, Harrow, Middlesex, HA3 9AB </p>
+                  <p className="text-sm text-muted-foreground mt-2">Serving all of London</p>
                 </CardContent>
               </Card>
 
@@ -147,7 +123,7 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-1 text-sm text-muted-foreground">
-                    <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                    <p>Monday - Friday: 9:30am - 7:30pm</p>
                     <p>Saturday: By appointment</p>
                     <p>Sunday: Closed</p>
                   </div>
@@ -167,55 +143,41 @@ const Contact = () => {
                 <CardContent>
                   <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                      <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="name" render={({
+                      field
+                    }) => <FormItem>
                             <FormLabel>Name *</FormLabel>
                             <FormControl>
                               <Input placeholder="Your full name" {...field} />
                             </FormControl>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <FormField
-                          control={form.control}
-                          name="email"
-                          render={({ field }) => (
-                            <FormItem>
+                        <FormField control={form.control} name="email" render={({
+                        field
+                      }) => <FormItem>
                               <FormLabel>Email *</FormLabel>
                               <FormControl>
                                 <Input type="email" placeholder="your.email@example.com" {...field} />
                               </FormControl>
                               <FormMessage />
-                            </FormItem>
-                          )}
-                        />
+                            </FormItem>} />
 
-                        <FormField
-                          control={form.control}
-                          name="phone"
-                          render={({ field }) => (
-                            <FormItem>
+                        <FormField control={form.control} name="phone" render={({
+                        field
+                      }) => <FormItem>
                               <FormLabel>Phone</FormLabel>
                               <FormControl>
                                 <Input type="tel" placeholder="Your phone number" {...field} />
                               </FormControl>
                               <FormMessage />
-                            </FormItem>
-                          )}
-                        />
+                            </FormItem>} />
                       </div>
 
-                      <FormField
-                        control={form.control}
-                        name="location"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="location" render={({
+                      field
+                    }) => <FormItem>
                             <FormLabel>Your Location *</FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                               <FormControl>
@@ -224,49 +186,33 @@ const Contact = () => {
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent>
-                                {locations.map((location) => (
-                                  <SelectItem key={location} value={location.toLowerCase()}>
+                                {locations.map(location => <SelectItem key={location} value={location.toLowerCase()}>
                                     {location}
-                                  </SelectItem>
-                                ))}
+                                  </SelectItem>)}
                               </SelectContent>
                             </Select>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
 
-                      <FormField
-                        control={form.control}
-                        name="subject"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="subject" render={({
+                      field
+                    }) => <FormItem>
                             <FormLabel>Subject *</FormLabel>
                             <FormControl>
                               <Input placeholder="What can we help you with?" {...field} />
                             </FormControl>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
 
-                      <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="message" render={({
+                      field
+                    }) => <FormItem>
                             <FormLabel>Message *</FormLabel>
                             <FormControl>
-                              <Textarea
-                                placeholder="Tell us more about your enquiry..."
-                                className="min-h-[150px]"
-                                {...field}
-                              />
+                              <Textarea placeholder="Tell us more about your enquiry..." className="min-h-[150px]" {...field} />
                             </FormControl>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
 
                       <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                         {isSubmitting ? "Sending..." : "Send Message"}
@@ -293,16 +239,9 @@ const Contact = () => {
             
             {/* Google Maps Embed */}
             <div className="rounded-lg overflow-hidden shadow-large mb-12">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39658.12776498764!2d-0.36379!3d51.5836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761155c4e6d605%3A0x2b3c4d6b3e8c25dd!2sHarrow%2C%20UK!5e0!3m2!1sen!2suk!4v1234567890"
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="VMK Accountants Location - Harrow, North West London"
-              ></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39658.12776498764!2d-0.36379!3d51.5836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761155c4e6d605%3A0x2b3c4d6b3e8c25dd!2sHarrow%2C%20UK!5e0!3m2!1sen!2suk!4v1234567890" width="100%" height="450" style={{
+              border: 0
+            }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="VMK Accountants Location - Harrow, North West London"></iframe>
             </div>
 
             <div className="text-center">
@@ -337,8 +276,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;

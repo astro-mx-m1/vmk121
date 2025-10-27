@@ -5,48 +5,22 @@ import headerLogo from "@/assets/logo-updated.png";
 import accaLogo from "@/assets/acca-logo.png";
 import aatLogo from "@/assets/aat-logo.png";
 import SoftwareCarousel from "./SoftwareCarousel";
-
 const Footer = () => {
-  return (
-    <>
+  return <>
       <SoftwareCarousel />
       <footer className="bg-primary text-white relative">
       {/* Social Media Icons - Fixed on the right */}
       <div className="fixed right-0 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-50 hidden lg:flex">
-        <a 
-          href="https://facebook.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="bg-[#3b5998] text-white p-3 hover:opacity-80 transition-opacity"
-          aria-label="Facebook"
-        >
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-[#3b5998] text-white p-3 hover:opacity-80 transition-opacity" aria-label="Facebook">
           <Facebook className="h-5 w-5" />
         </a>
-        <a 
-          href="https://twitter.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="bg-[#1da1f2] text-white p-3 hover:opacity-80 transition-opacity"
-          aria-label="X (Twitter)"
-        >
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="bg-[#1da1f2] text-white p-3 hover:opacity-80 transition-opacity" aria-label="X (Twitter)">
           <FaXTwitter className="h-5 w-5" />
         </a>
-        <a 
-          href="https://linkedin.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="bg-[#0077b5] text-white p-3 hover:opacity-80 transition-opacity"
-          aria-label="LinkedIn"
-        >
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="bg-[#0077b5] text-white p-3 hover:opacity-80 transition-opacity" aria-label="LinkedIn">
           <Linkedin className="h-5 w-5" />
         </a>
-        <a 
-          href="https://instagram.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white p-3 hover:opacity-80 transition-opacity"
-          aria-label="Instagram"
-        >
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white p-3 hover:opacity-80 transition-opacity" aria-label="Instagram">
           <Instagram className="h-5 w-5" />
         </a>
       </div>
@@ -57,11 +31,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Company Info with Logo */}
             <div>
-              <img 
-                src={headerLogo} 
-                alt="VMK Accountants Ltd" 
-                className="h-16 w-auto mb-4"
-              />
+              <img src={headerLogo} alt="VMK Accountants Ltd" className="h-16 w-auto mb-4" />
               <p className="text-foreground text-sm leading-relaxed mb-4">
                 Today's business environment is fast moving, intricate, and highly competitive. Business owners need the support of professionals who provide on-time, effective solutions to help their business move forward. We aim to provide such a service.
               </p>
@@ -80,11 +50,11 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 flex-shrink-0 text-primary" />
-                  <a href="tel:02089075656" className="hover:text-primary transition-colors">0208 907 5656</a>
+                  <a href="tel:02089075656" className="hover:text-primary transition-colors">07956 309363</a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 flex-shrink-0 text-primary" />
-                  <a href="tel:07956309363" className="hover:text-primary transition-colors">07956 309363</a>
+                  <a href="tel:07956309363" className="hover:text-primary transition-colors">0208 907 5656</a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 flex-shrink-0 text-primary" />
@@ -110,16 +80,8 @@ const Footer = () => {
 
               {/* Professional Certifications */}
               <div className="flex items-center gap-4 mt-8">
-                <img 
-                  src={accaLogo} 
-                  alt="ACCA Certified" 
-                  className="h-16 w-auto"
-                />
-                <img 
-                  src={aatLogo} 
-                  alt="AAT Certified" 
-                  className="h-16 w-auto"
-                />
+                <img src={accaLogo} alt="ACCA Certified" className="h-16 w-auto" />
+                <img src={aatLogo} alt="AAT Certified" className="h-16 w-auto" />
               </div>
             </div>
           </div>
@@ -144,8 +106,6 @@ const Footer = () => {
         </div>
         </div>
       </footer>
-    </>
-  );
+    </>;
 };
-
 export default Footer;
