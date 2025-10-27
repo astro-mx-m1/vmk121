@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calculator, Users, MapPin, CheckCircle } from "lucide-react";
+import { ArrowRight, Calculator, Users, MapPin, CheckCircle, Star, MessageSquare, FileCheck } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import HeroSlideshow from "@/components/HeroSlideshow";
@@ -206,10 +206,40 @@ const Home = () => {
         </div>
       </section>
 
-      {/* New Company Setup Form Section */}
+      {/* New Client Setup Questionnaire Section */}
       <section className="py-24 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center glass-card p-12 rounded-3xl">
+            <div className="mb-8">
+              <FileCheck className="h-16 w-16 text-accent mx-auto mb-4" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-8">
+              Become a VMK Client Today
+            </h2>
+            <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
+              Ready to work with us? Complete our simple client setup questionnaire to get started. We'll review your information and get in touch to discuss how we can help your business thrive.
+            </p>
+            <a 
+              href="https://forms.gle/3gkSAWFpFumoJsZHA" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" variant="default" className="group text-base px-10 shadow-lg">
+                Complete New Client Setup Questionnaire
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* New Company Setup Form Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center glass-card p-12 rounded-3xl border-2 border-primary/20">
+            <div className="mb-8">
+              <Building2 className="h-16 w-16 text-primary mx-auto mb-4" />
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-8">
               Starting a New Company?
             </h2>
@@ -286,12 +316,46 @@ const Home = () => {
             ))}
           </div>
 
-          <div className="text-center">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+            <a 
+              href="https://uk.trustpilot.com/review/www.vmkaccountants.co.uk" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" className="group bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8">
+                <div className="flex items-center gap-2">
+                  <Star className="h-5 w-5 fill-yellow-300 text-yellow-300 group-hover:animate-pulse" />
+                  <Star className="h-5 w-5 fill-yellow-300 text-yellow-300 group-hover:animate-pulse" style={{ animationDelay: '0.1s' }} />
+                  <Star className="h-5 w-5 fill-yellow-300 text-yellow-300 group-hover:animate-pulse" style={{ animationDelay: '0.2s' }} />
+                  <Star className="h-5 w-5 fill-yellow-300 text-yellow-300 group-hover:animate-pulse" style={{ animationDelay: '0.3s' }} />
+                  <Star className="h-5 w-5 fill-yellow-300 text-yellow-300 group-hover:animate-pulse" style={{ animationDelay: '0.4s' }} />
+                </div>
+                <span className="ml-3">Give a Trustpilot Review</span>
+              </Button>
+            </a>
+
             <Link to="/testimonials">
-              <Button variant="outline" size="lg" className="text-base px-10">
+              <Button variant="outline" size="lg" className="text-base px-10 hover:bg-accent/10 border-2">
                 Read More Testimonials
               </Button>
             </Link>
+
+            <a 
+              href="https://g.page/r/CW35h6eLpsPOEBM/review" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8">
+                <div className="flex items-center gap-2">
+                  <Star className="h-5 w-5 fill-yellow-300 text-yellow-300 group-hover:animate-pulse" />
+                  <Star className="h-5 w-5 fill-yellow-300 text-yellow-300 group-hover:animate-pulse" style={{ animationDelay: '0.1s' }} />
+                  <Star className="h-5 w-5 fill-yellow-300 text-yellow-300 group-hover:animate-pulse" style={{ animationDelay: '0.2s' }} />
+                  <Star className="h-5 w-5 fill-yellow-300 text-yellow-300 group-hover:animate-pulse" style={{ animationDelay: '0.3s' }} />
+                  <Star className="h-5 w-5 fill-yellow-300 text-yellow-300 group-hover:animate-pulse" style={{ animationDelay: '0.4s' }} />
+                </div>
+                <span className="ml-3">Give a Google Review</span>
+              </Button>
+            </a>
           </div>
         </div>
       </section>

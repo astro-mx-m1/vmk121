@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -17,14 +17,33 @@ const formSchema = z.object({
   phone: z.string().min(10, "Phone number must be at least 10 characters").max(20, "Phone number must be less than 20 characters").optional().or(z.literal("")),
   location: z.string().min(1, "Please select your location"),
   subject: z.string().min(5, "Subject must be at least 5 characters").max(200, "Subject must be less than 200 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters").max(2000, "Message must be less than 2000 characters")
+  message: z.string().min(10, "Message must be at least 10 characters").max(2000, "Message must be less than 2000 characters"),
+  captcha: z.string().min(1, "Please complete the security verification")
 });
 type FormValues = z.infer<typeof formSchema>;
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captchaCode, setCaptchaCode] = useState("");
   const {
     toast
   } = useToast();
+  
+  // Generate random captcha on mount and after each submission
+  const generateCaptcha = () => {
+    const num1 = Math.floor(Math.random() * 10);
+    const num2 = Math.floor(Math.random() * 10);
+    const result = num1 + num2;
+    setCaptchaCode(`${num1} + ${num2} = ${result}`);
+    return result.toString();
+  };
+
+  const [captchaAnswer, setCaptchaAnswer] = useState("");
+
+  useEffect(() => {
+    const answer = generateCaptcha();
+    setCaptchaAnswer(answer);
+  }, []);
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -33,10 +52,21 @@ const Contact = () => {
       phone: "",
       location: "",
       subject: "",
-      message: ""
+      message: "",
+      captcha: ""
     }
   });
   const onSubmit = async (data: FormValues) => {
+    // Validate captcha
+    if (data.captcha !== captchaAnswer) {
+      toast({
+        title: "Verification failed",
+        description: "Please enter the correct answer to the security question.",
+        variant: "destructive"
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     // Simulate form submission
@@ -46,6 +76,11 @@ const Contact = () => {
       description: "Thank you for contacting us. We'll get back to you within 24 hours."
     });
     form.reset();
+    
+    // Generate new captcha
+    const newAnswer = generateCaptcha();
+    setCaptchaAnswer(newAnswer);
+    
     setIsSubmitting(false);
   };
   const locations = ["Kenton", "Harrow", "Kingsbury", "Stanmore", "Wembley", "Finchley", "Northwood", "Edgware", "Southall", "Hayes", "Wood Green", "Watford", "Hendon", "Northolt", "London", "Other"];
@@ -214,6 +249,36 @@ admin@vmkaccountants.oc.uk</p>
                             <FormMessage />
                           </FormItem>} />
 
+                      {/* Security Verification */}
+                      <div className="space-y-4 p-6 bg-muted/50 rounded-lg border-2 border-accent/20">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <FormLabel className="text-base font-semibold">Security Verification *</FormLabel>
+                            <p className="text-sm text-muted-foreground mt-1">Prove you're not a bot by solving this simple math problem</p>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center gap-4">
+                          <div className="bg-gradient-to-br from-primary to-accent text-white px-6 py-3 rounded-lg font-mono text-xl font-bold tracking-wide shadow-lg">
+                            {captchaCode.split('=')[0]}
+                          </div>
+                          <span className="text-xl font-bold text-muted-foreground">=</span>
+                          <FormField control={form.control} name="captcha" render={({
+                          field
+                        }) => <FormItem className="flex-1">
+                                <FormControl>
+                                  <Input 
+                                    type="text" 
+                                    placeholder="Your answer" 
+                                    className="text-lg font-semibold"
+                                    {...field} 
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>} />
+                        </div>
+                      </div>
+
                       <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                         {isSubmitting ? "Sending..." : "Send Message"}
                       </Button>
@@ -239,9 +304,9 @@ admin@vmkaccountants.oc.uk</p>
             
             {/* Google Maps Embed */}
             <div className="rounded-lg overflow-hidden shadow-large mb-12">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39658.12776498764!2d-0.36379!3d51.5836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761155c4e6d605%3A0x2b3c4d6b3e8c25dd!2sHarrow%2C%20UK!5e0!3m2!1sen!2suk!4v1234567890" width="100%" height="450" style={{
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.1234567890!2d-0.2854!3d51.5836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487615f5c6e6d605%3A0x2b3c4d6b3e8c25dd!2s17%20Hunters%20Grove%2C%20Kenton%2C%20Harrow%20HA3%209AB%2C%20UK!5e0!3m2!1sen!2suk!4v1234567890" width="100%" height="450" style={{
               border: 0
-            }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="VMK Accountants Location - Harrow, North West London"></iframe>
+            }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="VMK Accountants Location - 17 Hunters Grove, Kenton, Harrow"></iframe>
             </div>
 
             <div className="text-center">

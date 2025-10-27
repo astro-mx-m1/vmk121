@@ -108,7 +108,7 @@ const Navbar = () => {
               {/* Menu Items */}
               <Link
                 to="/about"
-                className={`px-5 py-5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors relative ${
+                className={`px-5 py-5 text-sm font-semibold text-primary transition-all relative hover:text-accent hover:shadow-lg ${
                   isActive("/about") ? "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-accent" : ""
                 }`}
               >
@@ -119,7 +119,7 @@ const Navbar = () => {
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-sm font-semibold text-primary hover:text-primary/80 bg-transparent px-5 py-5 h-auto">
+                    <NavigationMenuTrigger className="text-sm font-semibold text-primary hover:text-accent hover:shadow-lg transition-all bg-transparent px-5 py-5 h-auto">
                       Our Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -171,7 +171,7 @@ const Navbar = () => {
 
               <Link
                 to="/specialist-sectors"
-                className={`px-5 py-5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors relative ${
+                className={`px-5 py-5 text-sm font-semibold text-primary hover:text-accent hover:shadow-lg transition-all relative ${
                   isActive("/specialist-sectors") ? "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-accent" : ""
                 }`}
               >
@@ -180,7 +180,7 @@ const Navbar = () => {
 
               <Link
                 to="/making-tax-digital"
-                className={`px-5 py-5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors relative ${
+                className={`px-5 py-5 text-sm font-semibold text-primary hover:text-accent hover:shadow-lg transition-all relative ${
                   isActive("/making-tax-digital") ? "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-accent" : ""
                 }`}
               >
@@ -191,7 +191,7 @@ const Navbar = () => {
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-sm font-semibold text-primary hover:text-primary/80 bg-transparent px-5 py-5 h-auto">
+                    <NavigationMenuTrigger className="text-sm font-semibold text-primary hover:text-accent hover:shadow-lg transition-all bg-transparent px-5 py-5 h-auto">
                       Business Startup
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -248,7 +248,7 @@ const Navbar = () => {
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-sm font-semibold text-primary hover:text-primary/80 bg-transparent px-5 py-5 h-auto">
+                    <NavigationMenuTrigger className="text-sm font-semibold text-primary hover:text-accent hover:shadow-lg transition-all bg-transparent px-5 py-5 h-auto">
                       Areas We Cover
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -276,7 +276,7 @@ const Navbar = () => {
 
               <Link
                 to="/contact"
-                className={`px-5 py-5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors relative ${
+                className={`px-5 py-5 text-sm font-semibold text-primary hover:text-accent hover:shadow-lg transition-all relative ${
                   isActive("/contact") ? "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-accent" : ""
                 }`}
               >

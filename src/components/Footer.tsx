@@ -1,27 +1,26 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram } from "lucide-react";
-import { FaXTwitter } from "react-icons/fa6";
+import { Mail, Phone, MapPin } from "lucide-react";
 import headerLogo from "@/assets/logo-updated.png";
 import accaLogo from "@/assets/acca-logo.png";
 import aatLogo from "@/assets/aat-logo.png";
+import linkedinLogo from "@/assets/linkedin-logo.png";
+import facebookLogo from "@/assets/facebook-logo.jpg";
+import instagramLogo from "@/assets/instagram-logo.jpg";
 import SoftwareCarousel from "./SoftwareCarousel";
 const Footer = () => {
   return <>
       <SoftwareCarousel />
       <footer className="bg-primary text-white relative">
       {/* Social Media Icons - Fixed on the right */}
-      <div className="fixed right-0 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-50 hidden lg:flex">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-[#3b5998] text-white p-3 hover:opacity-80 transition-opacity" aria-label="Facebook">
-          <Facebook className="h-5 w-5" />
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-50 hidden lg:flex shadow-2xl">
+        <a href="https://www.facebook.com/VMKTAX" target="_blank" rel="noopener noreferrer" className="hover:scale-110 hover:shadow-2xl transition-all duration-300" aria-label="Facebook">
+          <img src={facebookLogo} alt="Facebook" className="h-12 w-12 rounded-lg" />
         </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="bg-[#1da1f2] text-white p-3 hover:opacity-80 transition-opacity" aria-label="X (Twitter)">
-          <FaXTwitter className="h-5 w-5" />
+        <a href="https://www.linkedin.com/in/vmkaccountants/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 hover:shadow-2xl transition-all duration-300" aria-label="LinkedIn">
+          <img src={linkedinLogo} alt="LinkedIn" className="h-12 w-12 rounded-lg" />
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="bg-[#0077b5] text-white p-3 hover:opacity-80 transition-opacity" aria-label="LinkedIn">
-          <Linkedin className="h-5 w-5" />
-        </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white p-3 hover:opacity-80 transition-opacity" aria-label="Instagram">
-          <Instagram className="h-5 w-5" />
+        <a href="https://www.instagram.com/vmkaccountants/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 hover:shadow-2xl transition-all duration-300" aria-label="Instagram">
+          <img src={instagramLogo} alt="Instagram" className="h-12 w-12 rounded-lg" />
         </a>
       </div>
 
