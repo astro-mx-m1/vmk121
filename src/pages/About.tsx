@@ -34,9 +34,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
-              <p>
-                Established in 2001, VMK Accountants Ltd is a trusted and independent firm of Chartered Accountants based in Kenton, Harrow, Pinner, Kingsbury, Edgware, Watford, Wembley, Northwood, Uxbridge, and across London.
-              </p>
+              <p>Established in 2001, VMK Accountants Limited is a trusted and independent firm of Association of Chartered Certified Accountants based in Kenton, Harrow, Pinner, Kingsbury, Edgware, Watford, Wembley, Northwood, Uxbridge, and across London.</p>
               <p>We provide accounting, tax, and advisory services tailored for owner-managed businesses, sole traders, partnerships, and small limited companies; often family-run enterprises. Our mission is simple: to deliver professional, reliable, and affordable accounting solutions that give you peace of mind.</p>
               <p>
                 At VMK Accountants, we believe in clear communication, practical advice, and fixed, transparent fees. Whether you're a start-up, an established business, or a self-employed professional, we'll help you stay compliant, organised, and profitable.
