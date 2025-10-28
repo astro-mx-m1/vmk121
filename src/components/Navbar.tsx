@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Home, Phone } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import logoMain from "@/assets/logo-updated.png";
 import {
   NavigationMenu,
@@ -76,13 +77,79 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden text-foreground"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+            <Sheet>
+              <SheetTrigger asChild className="lg:hidden">
+                <Button variant="ghost" size="icon" aria-label="Toggle menu">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] overflow-y-auto">
+                <nav className="flex flex-col gap-6 mt-8">
+                  <Link to="/" className="text-lg font-medium hover:text-accent transition-colors">
+                    Home
+                  </Link>
+                  
+                  <Link to="/about" className="text-lg font-medium hover:text-accent transition-colors">
+                    About Us
+                  </Link>
+                  
+                  <Link to="/testimonials" className="text-lg font-medium hover:text-accent transition-colors">
+                    Testimonials
+                  </Link>
+
+                  <div className="space-y-4">
+                    <h3 className="font-semibold text-primary">Our Services</h3>
+                    <Link to="/services/business-services" className="block text-muted-foreground hover:text-accent transition-colors pl-4">
+                      Business Services
+                    </Link>
+                    <Link to="/services/taxation-services" className="block text-muted-foreground hover:text-accent transition-colors pl-4">
+                      Taxation Services
+                    </Link>
+                    <Link to="/services/other-services" className="block text-muted-foreground hover:text-accent transition-colors pl-4">
+                      Other Services
+                    </Link>
+                  </div>
+
+                  <Link to="/specialist-sectors" className="text-lg font-medium hover:text-accent transition-colors">
+                    Specialist Sectors
+                  </Link>
+
+                  <Link to="/making-tax-digital" className="text-lg font-medium hover:text-accent transition-colors">
+                    Making Tax Digital
+                  </Link>
+
+                  <div className="space-y-4">
+                    <h3 className="font-semibold text-primary">Business Startup</h3>
+                    <Link to="/business-start-up/company-formation" className="block text-muted-foreground hover:text-accent transition-colors pl-4">
+                      Company Formation
+                    </Link>
+                    <Link to="/business-start-up/vat-registration" className="block text-muted-foreground hover:text-accent transition-colors pl-4">
+                      VAT Registration
+                    </Link>
+                    <Link to="/business-start-up/paye-registration" className="block text-muted-foreground hover:text-accent transition-colors pl-4">
+                      PAYE Registration
+                    </Link>
+                    <Link to="/business-start-up/self-assessment-registration" className="block text-muted-foreground hover:text-accent transition-colors pl-4">
+                      Self Assessment Registration
+                    </Link>
+                    <Link to="/business-start-up/business-planning" className="block text-muted-foreground hover:text-accent transition-colors pl-4">
+                      Business Planning
+                    </Link>
+                    <Link to="/business-start-up/useful-links" className="block text-muted-foreground hover:text-accent transition-colors pl-4">
+                      Useful Links
+                    </Link>
+                  </div>
+
+                  <Link to="/locations" className="text-lg font-medium hover:text-accent transition-colors">
+                    Areas We Cover
+                  </Link>
+
+                  <Link to="/contact" className="text-lg font-medium text-accent hover:text-accent/80 transition-colors">
+                    Contact
+                  </Link>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
@@ -96,10 +163,10 @@ const Navbar = () => {
               {/* Home Icon */}
               <Link
                 to="/"
-                className={`px-6 py-5 transition-colors ${
+                className={`px-6 py-5 transition-all duration-300 hover:shadow-xl hover:scale-110 hover:-translate-y-1 hover:bg-accent/20 ${
                   isActive("/") 
                     ? "bg-accent" 
-                    : "bg-accent/90 hover:bg-accent"
+                    : "bg-accent/90"
                 }`}
               >
                 <Home className="h-5 w-5 text-accent-foreground" />

@@ -4,6 +4,10 @@ import moneysoftLogo from "@/assets/software/moneysoft.jpeg";
 import quickbooksLogo from "@/assets/software/quickbooks.png";
 import sageLogo from "@/assets/software/sage.png";
 import xeroLogo from "@/assets/software/xero.png";
+import cchLogo from "@/assets/software/cch.png";
+import odooLogo from "@/assets/software/odoo.png";
+import quickfileLogo from "@/assets/software/quickfile.jpg";
+import zohoLogo from "@/assets/software/zoho.png";
 
 const SoftwareCarousel = () => {
   const softwares = [
@@ -13,6 +17,10 @@ const SoftwareCarousel = () => {
     { name: "FreeAgent", logo: freeagentLogo, url: "https://www.freeagent.com" },
     { name: "Capium", logo: capiumLogo, url: "https://www.capium.com" },
     { name: "Moneysoft", logo: moneysoftLogo, url: "https://www.moneysoft.co.uk" },
+    { name: "CCH", logo: cchLogo, url: "https://www.wolterskluwer.com" },
+    { name: "Odoo", logo: odooLogo, url: "https://www.odoo.com" },
+    { name: "QuickFile", logo: quickfileLogo, url: "https://www.quickfile.co.uk" },
+    { name: "Zoho", logo: zohoLogo, url: "https://www.zoho.com" },
   ];
 
   // Duplicate for seamless loop

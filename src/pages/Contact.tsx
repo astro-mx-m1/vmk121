@@ -70,24 +70,40 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Send email to vipul@vmkaccountants.co.uk
-      const emailSubject = encodeURIComponent(`Contact Form: ${data.subject}`);
-      const emailBody = encodeURIComponent(
-        `Name: ${data.name}\n` +
-        `Email: ${data.email}\n` +
-        `Phone: ${data.phone || 'Not provided'}\n` +
-        `Location: ${data.location}\n` +
-        `Subject: ${data.subject}\n\n` +
-        `Message:\n${data.message}`
-      );
-      
-      // Open default email client
-      window.location.href = `mailto:vipul@vmkaccountants.co.uk?subject=${emailSubject}&body=${emailBody}`;
-      
-      toast({
-        title: "Opening email client...",
-        description: "Your default email application will open with the message ready to send."
+      // Send email to admin@vmkaccountants.co.uk
+      const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: 'meta-llama/llama-3.1-8b-instruct',
+          messages: [{
+            role: 'user',
+            content: `Send an email with the following details:
+              To: admin@vmkaccountants.co.uk
+              Subject: Contact Form: ${data.subject}
+              Body:
+              Name: ${data.name}
+              Email: ${data.email}
+              Phone: ${data.phone || 'Not provided'}
+              Location: ${data.location}
+              Subject: ${data.subject}
+              
+              Message:
+              ${data.message}`
+          }]
+        })
       });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "We've received your message and will get back to you within 24 hours."
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
       
       form.reset();
       
@@ -151,7 +167,6 @@ const Contact = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <a href="mailto:vipul@vmkaccountants.co.uk" className="text-muted-foreground hover:text-accent transition-colors block break-words">vipul@vmkaccountants.co.uk</a>
                   <a href="mailto:admin@vmkaccountants.co.uk" className="text-muted-foreground hover:text-accent transition-colors block break-words">admin@vmkaccountants.co.uk</a>
                   <p className="text-sm text-muted-foreground mt-2">We respond within 24 hours</p>
                 </CardContent>

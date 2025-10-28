@@ -53,7 +53,7 @@ const PrivacyPolicy = () => {
                   <p>VMK Accountants Limited</p>
                   <p>17 Hunters Grove, Kenton, Harrow, HA3 9AB</p>
                   <p>📞 Tel: 020 8930 2756</p>
-                  <p>📧 Email: vipul@vmkaccountants.co.uk</p>
+                  <p>📧 Email: admin@vmkaccountants.co.uk</p>
                 </div>
               </div>
             </div>

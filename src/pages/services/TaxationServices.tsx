@@ -2,6 +2,7 @@ import { FileText, Building2, Users, DollarSign, Shield, Scale, Home, AlertCircl
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import CTASection from "@/components/CTASection";
 import taxationServicesImage from "@/assets/taxation-services.jpg";
+import taxationHeroImage from "@/assets/taxation-hero.png";
 
 const TaxationServices = () => {
   const services = [
@@ -148,6 +149,15 @@ const TaxationServices = () => {
       {/* Services Grid */}
       <section className="py-20">
         <div className="container mx-auto px-4">
+          {/* Tax Hero Image */}
+          <div className="mb-12 flex justify-center">
+            <img 
+              src={taxationHeroImage} 
+              alt="VMK Accountants Limited Tax Services" 
+              className="w-full max-w-2xl h-auto object-contain rounded-2xl shadow-large"
+            />
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => {
               const Icon = service.icon;

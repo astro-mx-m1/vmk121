@@ -167,7 +167,7 @@ const LocationTemplate = ({ locationName }: LocationTemplateProps) => {
                 <CardContent className="pt-6 text-center">
                   <Mail className="h-8 w-8 text-secondary mx-auto mb-3" />
                   <h3 className="font-semibold mb-2">Email Us</h3>
-                  <p className="text-muted-foreground">vipul@vmkaccountants.co.uk</p>
+                  <p className="text-muted-foreground">admin@vmkaccountants.co.uk</p>
                 </CardContent>
               </Card>
             </div>
