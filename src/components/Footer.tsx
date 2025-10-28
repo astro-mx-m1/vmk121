@@ -11,8 +11,8 @@ const Footer = () => {
   return <>
       <SoftwareCarousel />
       <footer className="bg-primary text-white relative">
-      {/* Social Media Icons - Fixed on the right */}
-      <div className="fixed right-0 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-50 hidden lg:flex shadow-2xl">
+      {/* Social Media Icons - Fixed on the left */}
+      <div className="fixed left-0 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-50 hidden lg:flex shadow-2xl">
         <a href="https://www.facebook.com/VMKTAX" target="_blank" rel="noopener noreferrer" className="hover:scale-110 hover:shadow-2xl transition-all duration-300" aria-label="Facebook">
           <img src={facebookLogo} alt="Facebook" className="h-12 w-12 rounded-lg" />
         </a>

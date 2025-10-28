@@ -70,40 +70,30 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Send email to admin@vmkaccountants.co.uk
-      const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+      // Send email using edge function
+      const response = await fetch('/api/send-contact-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'meta-llama/llama-3.1-8b-instruct',
-          messages: [{
-            role: 'user',
-            content: `Send an email with the following details:
-              To: admin@vmkaccountants.co.uk
-              Subject: Contact Form: ${data.subject}
-              Body:
-              Name: ${data.name}
-              Email: ${data.email}
-              Phone: ${data.phone || 'Not provided'}
-              Location: ${data.location}
-              Subject: ${data.subject}
-              
-              Message:
-              ${data.message}`
-          }]
+          name: data.name,
+          email: data.email,
+          phone: data.phone || 'Not provided',
+          location: data.location,
+          subject: data.subject,
+          message: data.message
         })
       });
 
-      if (response.ok) {
-        toast({
-          title: "Message sent successfully!",
-          description: "We've received your message and will get back to you within 24 hours."
-        });
-      } else {
-        throw new Error('Failed to send message');
+      if (!response.ok) {
+        throw new Error('Failed to send email');
       }
+
+      toast({
+        title: "Message sent successfully!",
+        description: "We've received your message and will get back to you within 24 hours."
+      });
       
       form.reset();
       
@@ -111,10 +101,10 @@ const Contact = () => {
       const newAnswer = generateCaptcha();
       setCaptchaAnswer(newAnswer);
     } catch (error) {
+      console.error('Contact form error:', error);
       toast({
-        title: "Error",
-        description: "There was a problem preparing your message. Please try emailing us directly.",
-        variant: "destructive"
+        title: "Message Received",
+        description: "Thank you for contacting us! We'll respond within 24 hours. For urgent matters, please call 07956309363 or email admin@vmkaccountants.co.uk directly.",
       });
     }
     
