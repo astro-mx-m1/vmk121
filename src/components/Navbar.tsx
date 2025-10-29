@@ -76,10 +76,15 @@ const Navbar = () => {
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Visible & Styled */}
             <Sheet>
               <SheetTrigger asChild className="lg:hidden">
-                <Button variant="ghost" size="icon" aria-label="Toggle menu">
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  aria-label="Toggle menu"
+                  className="bg-accent text-accent-foreground shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 border-2 border-accent"
+                >
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
@@ -351,11 +356,23 @@ const Navbar = () => {
               </Link>
             </div>
 
-            {/* Phone Number */}
-            <div className="hidden lg:flex items-center bg-primary text-primary-foreground px-8 py-5">
-              <Phone className="h-5 w-5 mr-3" />
-              <span className="text-xl font-bold tracking-wide">07956309363</span>
-            </div>
+            {/* Phone Number with Stunning Hover Effect */}
+            <a 
+              href="tel:07956309363"
+              className="hidden lg:flex items-center bg-primary text-primary-foreground px-8 py-5 relative overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.6)] hover:scale-105 hover:-translate-y-1"
+            >
+              {/* Glass overlay effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+              
+              {/* Animated background glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/30 to-accent/0 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
+              
+              {/* Content */}
+              <Phone className="h-5 w-5 mr-3 relative z-10 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" />
+              <span className="text-xl font-bold tracking-wide relative z-10 group-hover:text-accent-foreground group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300">
+                07956309363
+              </span>
+            </a>
           </div>
         </div>
       </div>
