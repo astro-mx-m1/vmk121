@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -119,6 +119,32 @@ const App = () => (
               <Route path="/testimonials" element={<Testimonials />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/disclaimer" element={<Disclaimer />} />
+              
+              {/* SEO URL Redirects - Old site structure to new */}
+              <Route path="/our-services/business-services/accountancy/" element={<Navigate to="/services/business-services" replace />} />
+              <Route path="/our-services/business-services/" element={<Navigate to="/services/business-services" replace />} />
+              <Route path="/our-services/business-services" element={<Navigate to="/services/business-services" replace />} />
+              <Route path="/specialist-sector/restaurant-accounting/" element={<Navigate to="/specialist-sectors/restaurant" replace />} />
+              <Route path="/specialist-sector/restaurant-accounting" element={<Navigate to="/specialist-sectors/restaurant" replace />} />
+              <Route path="/specialist-sector/construction-industry-specialist/" element={<Navigate to="/specialist-sectors/construction" replace />} />
+              <Route path="/specialist-sector/construction-industry-specialist" element={<Navigate to="/specialist-sectors/construction" replace />} />
+              <Route path="/specialist-sector/childcare/" element={<Navigate to="/specialist-sectors/childcare" replace />} />
+              <Route path="/specialist-sector/childcare" element={<Navigate to="/specialist-sectors/childcare" replace />} />
+              <Route path="/contact-us/" element={<Navigate to="/contact" replace />} />
+              <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
+              <Route path="/accountant-tax-adviser-kenton-harrow-kingsbury-edgware-watford-wembley-northwood-london/" element={<Navigate to="/locations" replace />} />
+              <Route path="/accountant-tax-adviser-kenton-harrow-kingsbury-edgware-watford-wembley-northwood-london" element={<Navigate to="/locations" replace />} />
+              <Route path="/our-services/" element={<Navigate to="/services" replace />} />
+              <Route path="/our-services" element={<Navigate to="/services" replace />} />
+              <Route path="/specialist-sector/" element={<Navigate to="/specialist-sectors" replace />} />
+              <Route path="/specialist-sector" element={<Navigate to="/specialist-sectors" replace />} />
+              <Route path="/our-services/taxation-services/personal-tax-planning-self-assessment-kenton-harrow-wembley/" element={<Navigate to="/services/taxation-services" replace />} />
+              <Route path="/our-services/taxation-services/personal-tax-planning-self-assessment-kenton-harrow-wembley" element={<Navigate to="/services/taxation-services" replace />} />
+              <Route path="/business-startup/harrow-kenton-register-for-self-assessment/" element={<Navigate to="/business-start-up/self-assessment-registration" replace />} />
+              <Route path="/business-startup/harrow-kenton-register-for-self-assessment" element={<Navigate to="/business-start-up/self-assessment-registration" replace />} />
+              <Route path="/pinner-accountants-vmk-accountants-in-pinner/" element={<Navigate to="/locations" replace />} />
+              <Route path="/pinner-accountants-vmk-accountants-in-pinner" element={<Navigate to="/locations" replace />} />
+              
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
