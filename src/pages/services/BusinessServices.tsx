@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { BookOpen, FileText, Users, DollarSign, Building2 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import CTASection from "@/components/CTASection";
@@ -74,6 +75,63 @@ const BusinessServices = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Business Accounting Services | Bookkeeping, VAT, Payroll & Company Services</title>
+        <meta name="description" content="Professional business accounting services including bookkeeping, VAT returns, payroll management, company secretarial services, and financial support for small and medium businesses across London." />
+        <meta name="keywords" content="business accounting, bookkeeping services, vat returns, payroll services, company secretarial, cloud accounting, xero, quickbooks" />
+        <link rel="canonical" href="https://vmkaccountants.co.uk/services/business-services" />
+        <meta property="og:title" content="Business Accounting Services | Bookkeeping, VAT, Payroll & Company Services" />
+        <meta property="og:description" content="Professional business accounting services including bookkeeping, VAT returns, payroll management, and company secretarial services." />
+        <meta property="og:url" content="https://vmkaccountants.co.uk/services/business-services" />
+        
+        {/* Structured Data for Business Services */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Business Accounting Services",
+            "provider": {
+              "@type": "AccountingService",
+              "name": "VMK Accountants"
+            },
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "GBP",
+              "offerCount": "5"
+            },
+            "areaServed": "London, UK"
+          })}
+        </script>
+
+        {/* BreadcrumbList */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://vmkaccountants.co.uk/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://vmkaccountants.co.uk/services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Business Services",
+                "item": "https://vmkaccountants.co.uk/services/business-services"
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
+      
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">

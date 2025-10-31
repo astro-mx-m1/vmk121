@@ -144,6 +144,10 @@ const App = () => (
               <Route path="/business-startup/harrow-kenton-register-for-self-assessment" element={<Navigate to="/business-start-up/self-assessment-registration" replace />} />
               <Route path="/pinner-accountants-vmk-accountants-in-pinner/" element={<Navigate to="/locations" replace />} />
               <Route path="/pinner-accountants-vmk-accountants-in-pinner" element={<Navigate to="/locations" replace />} />
+              <Route path="/our-services/taxation-services/property-tax-and-rental-accounts-wembley-kenton-harrow/" element={<Navigate to="/services/taxation-services" replace />} />
+              <Route path="/our-services/taxation-services/property-tax-and-rental-accounts-wembley-kenton-harrow" element={<Navigate to="/services/taxation-services" replace />} />
+              <Route path="/accountants-in-wembley-vmk-accountants-in-wembley/" element={<Navigate to="/locations/wembley" replace />} />
+              <Route path="/accountants-in-wembley-vmk-accountants-in-wembley" element={<Navigate to="/locations/wembley" replace />} />
               
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />

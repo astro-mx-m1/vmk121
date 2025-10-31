@@ -81,6 +81,162 @@ const Home = () => {
         <meta property="og:title" content="VMK Accountants | Expert Tax Advisors & Accountants in London" />
         <meta property="og:description" content="Chartered accountants serving London since 2001. Expert accounting, tax planning, and business advisory services." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://vmkaccountants.co.uk/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="VMK Accountants | Expert Tax Advisors & Accountants in London" />
+        <meta name="twitter:description" content="Chartered accountants serving London since 2001. Expert accounting, tax planning, and business advisory services." />
+        
+        {/* Structured Data for Organization - SEO/AEO/GEO */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AccountingService",
+            "name": "VMK Accountants",
+            "description": "Expert chartered accountants and tax advisors serving London since 2001, specializing in business accounting, tax planning, payroll, VAT, and Making Tax Digital services.",
+            "url": "https://vmkaccountants.co.uk",
+            "logo": "https://vmkaccountants.co.uk/logo.png",
+            "image": "https://vmkaccountants.co.uk/logo.png",
+            "telephone": "+44-20-8204-6442",
+            "email": "info@vmkaccountants.co.uk",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "398 Kenton Road",
+              "addressLocality": "Kenton",
+              "addressRegion": "London",
+              "postalCode": "HA3 8DP",
+              "addressCountry": "GB"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "51.5892",
+              "longitude": "-0.3097"
+            },
+            "areaServed": [
+              "Kenton", "Harrow", "Wembley", "Kingsbury", "Stanmore", "Edgware", 
+              "Finchley", "Northwood", "Southall", "Hayes", "Wood Green", 
+              "Hendon", "Northolt", "Watford", "London"
+            ],
+            "priceRange": "££",
+            "openingHours": "Mo-Fr 09:00-18:00",
+            "sameAs": [
+              "https://www.facebook.com/vmkaccountants",
+              "https://www.linkedin.com/company/vmk-accountants",
+              "https://uk.trustpilot.com/review/www.vmkaccountants.co.uk"
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "150"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Accounting Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Accounting & Bookkeeping Services"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Tax Planning & Self Assessment"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Payroll Services"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "VAT Registration & Returns"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Making Tax Digital Compliance"
+                  }
+                }
+              ]
+            }
+          })}
+        </script>
+
+        {/* FAQ Structured Data for AEO */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What services do VMK Accountants offer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "VMK Accountants provide comprehensive accounting services including: accounting and bookkeeping, self assessment tax returns, payroll services, VAT registration and returns, Making Tax Digital compliance, business advisory, company formation, and tax planning. We serve small businesses, sole traders, landlords, and contractors across London."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which areas in London does VMK Accountants serve?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "VMK Accountants serve clients across North West London including Kenton, Harrow, Wembley, Kingsbury, Stanmore, Edgware, Finchley, Northwood, Southall, Hayes, Wood Green, Hendon, Northolt, Watford, and throughout Greater London."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much do VMK Accountants charge?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "VMK Accountants offer transparent pricing with no hidden fees. Costs vary based on your specific needs. We provide clear quotes before starting any work. Contact us for a free consultation to discuss pricing for your requirements."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is VMK Accountants Making Tax Digital compliant?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, VMK Accountants are fully Making Tax Digital (MTD) compliant. We help clients transition smoothly to MTD requirements for VAT and Income Tax, using cloud accounting software like Xero, QuickBooks, and Sage to ensure full HMRC compliance."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I become a client of VMK Accountants?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "To become a VMK Accountants client, complete our online client setup questionnaire or contact us directly. We'll review your information, discuss your needs, and provide a tailored quote. The process is simple and typically takes just a few days to get started."
+                }
+              }
+            ]
+          })}
+        </script>
+
+        {/* BreadcrumbList for Navigation */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://vmkaccountants.co.uk/"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       {/* Hero Slideshow Section */}
       <HeroSlideshow />

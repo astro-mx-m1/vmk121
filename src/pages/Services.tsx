@@ -118,6 +118,103 @@ const Services = () => {
         <meta name="description" content="Comprehensive accounting services including bookkeeping, self assessment, VAT returns, payroll, business advisory, and tax planning. Expert support for small businesses, sole traders, and contractors." />
         <meta name="keywords" content="accounting services, tax returns, payroll services, vat registration, business advisory, company formation, ir35 contractors" />
         <link rel="canonical" href="https://vmkaccountants.co.uk/services" />
+        <meta property="og:title" content="Accounting Services | Tax, Payroll, VAT & Business Advisory" />
+        <meta property="og:description" content="Comprehensive accounting services including bookkeeping, self assessment, VAT returns, payroll, business advisory, and tax planning." />
+        <meta property="og:url" content="https://vmkaccountants.co.uk/services" />
+        
+        {/* Service Structured Data for SEO/AEO/GEO */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Accounting Services",
+            "provider": {
+              "@type": "AccountingService",
+              "name": "VMK Accountants",
+              "url": "https://vmkaccountants.co.uk"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "London"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Accounting Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Accounting & Bookkeeping",
+                    "description": "Monthly bookkeeping, management accounts, year-end accounts and financial reporting"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Payroll & Auto-Enrolment",
+                    "description": "Complete payroll processing, PAYE, pension auto-enrolment, and RTI compliance"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Self Assessment & Income Tax",
+                    "description": "Personal tax returns, HMRC correspondence, and tax planning"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "VAT & VAT Registration",
+                    "description": "VAT registration, quarterly returns, and Making Tax Digital compliance"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Business Advisory & Growth",
+                    "description": "Cash flow forecasting, business planning, and growth strategy consulting"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Company Formation",
+                    "description": "New limited company registration and business structure advice"
+                  }
+                }
+              ]
+            }
+          })}
+        </script>
+
+        {/* BreadcrumbList */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://vmkaccountants.co.uk/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://vmkaccountants.co.uk/services"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       {/* Hero Section */}
       <section className="bg-gradient-hero py-16">
